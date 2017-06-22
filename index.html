@@ -23,11 +23,22 @@
 <body>
   <div id="map"></div>
   <div id="button">
-    <button onclick="drawLine()">Measure Tool</button>
-    <button onclick="drawLasso()">Lasso</button>
+    <button id="measure_button">Measure Tool</button>
+    <button id="lasso_button">Lasso</button>
   </div>
+  <script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: {lat: 34, lng: -40.605}
+    });
+    measureTool.config(map);
+    measureTool.listen();
+  }
+  </script>
   <script src= "src/measureTool.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiHVBt3Wt2syhmlf4BVtOZvdc_RsHrNwY&callback=initMap"
   async defer></script>
+
 </body>
 </html>
