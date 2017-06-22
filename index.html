@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation functions (heading)</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <style>
+  #map {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #button {
+    position: absolute;
+    top: 10px;
+    left: 35%;
+  }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="button">
+    <button onclick="drawLine()">Measure Tool</button>
+    <button onclick="drawLasso()">Lasso</button>
+  </div>
+  <script src= "src/measureTool.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiHVBt3Wt2syhmlf4BVtOZvdc_RsHrNwY&callback=initMap"
+  async defer></script>
+</body>
+</html>
