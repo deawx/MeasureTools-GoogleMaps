@@ -32,13 +32,21 @@
       zoom: 4,
       center: {lat: 34, lng: -40.605}
     });
-    measureTool.config(map);
-    measureTool.listen();
+    measureTool.config({
+      map: map,
+      measure_button: "measure_button",
+      lasso_button: "lasso_button",
+      polylineConfig:null,
+      polygonConfig:null,
+      onLineEnd: function(coords) {
+        console.log(coords);
+      },
+      onLineMove: null         // use this if you want real-time distance calculations
+    });
   }
   </script>
   <script src= "src/measureTool.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiHVBt3Wt2syhmlf4BVtOZvdc_RsHrNwY&callback=initMap"
   async defer></script>
-
 </body>
 </html>
